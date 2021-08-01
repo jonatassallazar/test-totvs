@@ -1,4 +1,3 @@
-import "./App.css";
 import Inadimplencia from "./components/Inadimplencia";
 
 function App() {
