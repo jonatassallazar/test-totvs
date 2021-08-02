@@ -5,8 +5,6 @@ const Clientes = require("./src/models/Clientes.model");
 const cors = require("cors");
 const moment = require("moment");
 
-const PORT = 8080;
-
 app.use(cors());
 
 app.get("/", (req, res) => {
@@ -23,15 +21,15 @@ app.get("/clientes-inadimplentes", async (req, res) => {
       const filtered = docs.filter((a) => a.dataVencimento < nowUnix);
       clientesInadimplentes.push(filtered);
     });
+    res.json(clientesInadimplentes);
   } catch (err) {
     console.log("Error:", err);
   }
 
-  res.json(clientesInadimplentes);
 });
 
-app.listen(PORT, function () {
-  console.log(`Listening on ${PORT}`);
+app.listen(process.env.PORT, function () {
+  console.log(`Listening on ${process.env.PORT}`);
 
   connectDb().then(() => {
     console.log("MongoDb connected");

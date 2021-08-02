@@ -10,7 +10,7 @@ function randomIntFromInterval(min, max) {
 }
 
 async function seedDB() {
-  const connectionUri = "mongodb://mongo:27017/test-totvs-db";
+  const connectionUri = `mongodb://mongo:${process.env.MONGODB_PORT}/test-totvs-db`;
   
   await mongoose.connect(connectionUri, {
     useUnifiedTopology: true,
