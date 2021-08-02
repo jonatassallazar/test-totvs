@@ -8,7 +8,8 @@ const moment = require("moment");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Utilize o caminho /clientes-inadimplentes para acessar a lista dos Clientes com data de pagamento vencidas");
+  const dataDia = new Date();
+  res.send(JSON.stringify(`${dataDia}`));
 });
 
 app.get("/clientes-inadimplentes", async (req, res) => {
@@ -25,7 +26,6 @@ app.get("/clientes-inadimplentes", async (req, res) => {
   } catch (err) {
     console.log("Error:", err);
   }
-
 });
 
 app.listen(process.env.PORT, function () {
