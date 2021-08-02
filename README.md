@@ -4,7 +4,7 @@ O tete foi realizado seguindo o documento de apoio enviado.
 
 ## Clonar o Projeto
 
-Primeiro clone o projeto ou baixe o arquivo zip.
+Primeiro clone a pasta do projeto ou baixe o arquivo zip.
 
 ## Execução
 
